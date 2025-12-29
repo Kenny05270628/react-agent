@@ -4,7 +4,7 @@ import time
 
 from llm import Siliconflow
 from tool import ReactTools
-
+from config import API_KEY
 
 class ReactAgent:
     def __init__(self, api_key: str = '') -> None:
@@ -151,7 +151,7 @@ class ReactAgent:
         return self._format_response(response)
 
 if __name__ == '__main__':
-    agent = ReactAgent(api_key="your api key")
+    agent = ReactAgent(api_key=API_KEY)
 
     response = agent.run("美国最近一次阅兵的原因有哪些？", max_iterations=3, verbose=True)
     print("最终答案：", response)
