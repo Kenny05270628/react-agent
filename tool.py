@@ -1,10 +1,11 @@
 import json
 import requests
 from typing import Dict, List, Any
+from config import X_API_KEY
 
 class ReactTools:
     """
-    React Agent 工具类
+    ReAct Agent 工具类
     
     为 ReAct Agent 提供标准化的工具接口
     """
@@ -45,7 +46,7 @@ class ReactTools:
 
         payload = json.dumps({"q": search_query})
         headers = {
-            'X-API-KEY': 'your serper api key',
+            'X-API-KEY': X_API_KEY,
             'Content-Type': 'application/json'
         }
 

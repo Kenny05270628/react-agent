@@ -1,5 +1,6 @@
 from typing import Dict, List, Tuple
 from openai import OpenAI
+from config import API_KEY
 
 class BaseModel:
     def __init__(self, api_key: str = '') -> None:
@@ -66,7 +67,7 @@ class Siliconflow(BaseModel):
         return model_response, updated_history
 
 if __name__ == "__main__":
-    llm = Siliconflow(api_key="your api key")
+    llm = Siliconflow(api_key=API_KEY)
     prompt = "你好"
     response, history = llm.chat(prompt)
     print("Response:", response)
